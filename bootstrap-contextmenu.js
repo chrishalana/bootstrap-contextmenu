@@ -145,9 +145,9 @@
 				, Y, X, parentOffset;
 
 			if (mouseY + menuHeight > boundsY) {
-				Y = {"top": mouseY - menuHeight + $(window).scrollTop()};
+				Y = {"top": mouseY - menuHeight + $(window).scrollTop() + this.$element.scrollParent().scrollTop()};
 			} else {
-				Y = {"top": mouseY + $(window).scrollTop()};
+				Y = {"top": mouseY + $(window).scrollTop() + this.$element.scrollParent().scrollTop()};
 			}
 
 			if ((mouseX + menuWidth > boundsX) && ((mouseX - menuWidth) > 0)) {
